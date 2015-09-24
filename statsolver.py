@@ -13,10 +13,6 @@ from fonctions import *
 print("Stat solver de Ludovic DRUETTE")
 print("version 0.1", end="\n\n")
 
-print(user_choice("la pillule bleu ou la pillule rouge",\
-                  "Bleu", "Rouge"))
-
-valeurs = keyboard_input()
 
 try:
     serie = statSerie(valeurs)
