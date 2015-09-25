@@ -13,7 +13,7 @@ from fonctions import *
 print("Stat solver de Ludovic DRUETTE")
 print("version 0.1", end="\n\n")
 
-
+valeurs = keyboard_input()
 try:
     serie = StatSerie(valeurs)
     print(serie)
