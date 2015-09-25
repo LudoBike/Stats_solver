@@ -5,7 +5,7 @@
 
 
 # Import
-from statserie import statSerie
+from statserie import StatSerie
 from fonctions import *
 
 
@@ -15,7 +15,7 @@ print("version 0.1", end="\n\n")
 
 
 try:
-    serie = statSerie(valeurs)
+    serie = StatSerie(valeurs)
     print(serie)
 except ValueError:
     exit()
