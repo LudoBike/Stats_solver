@@ -1,4 +1,4 @@
-class statSerie(object):
+class StatSerie(object):
     def __init__(self, serie):
         serie.sort()
         self.serie = serie
