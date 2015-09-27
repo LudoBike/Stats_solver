@@ -5,7 +5,7 @@ class StatSerie(object):
         self.refresh()
 
     def __repr__(self):
-        to_return = "; ".join([str(x) for x in self.serie])
+        to_return = "; ".join(str(x) for x in self.serie)
         to_return += "\nétendue = {0}; mediane = {1}; q1 = {2}; q2 = {3}; moyenne = {4}"\
             .format(self.etendue, self.mediane, self.q1, self.q3, self.moyenne)
         return to_return
@@ -24,7 +24,7 @@ class StatSerie(object):
     def cal_q1(self):
         q1_index = len(self.serie)//4
         self.q1 = self.serie[q1_index]
-        
+
     def cal_q3(self):
         q3_index = len(self.serie)//4*3
         self.q3 = self.serie[q3_index]
@@ -46,3 +46,14 @@ class StatSerie(object):
             self.refresh()
         except TypeError:
             print("error : no numeric variable")
+    def save(self, save_file_path):
+        if (type(save_file_path) != str):
+            print("Bad argument please enter string")
+        else:
+            try:
+                with open(save_file_path, 'w') as save_file :
+                    save_file.write(str(self))
+            except IOError:
+                print("Error: save failed")
+            else:
+                print("Save successfully")

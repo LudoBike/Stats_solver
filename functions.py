@@ -22,7 +22,7 @@ def keyboard_input():
             except ValueError:
                 print("Erreur: merci d'entrez un nombre")
             else:
-                serie.append()                    
+                serie.append(i)                    
     return serie
 
 

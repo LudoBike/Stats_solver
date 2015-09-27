@@ -6,7 +6,7 @@
 
 # Import
 from statserie import StatSerie
-from fonctions import *
+from functions import *
 
 
 # Main
@@ -18,4 +18,14 @@ try:
     serie = StatSerie(valeurs)
     print(serie)
 except ValueError:
+    exit()
+
+choice = user_choice("Que voulez-vous faire", \
+                     "Sauvegarder cette serie", \
+                     "Quitter")
+
+if (choice == 1):
+    print("Dans quel fichier souhaitez-vous sauvegarder")
+    serie.save(input(">"))
+else:
     exit()
