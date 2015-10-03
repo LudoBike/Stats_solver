@@ -1,8 +1,12 @@
 class StatSerie(object):
     def __init__(self, serie):
-        serie.sort()
-        self.serie = serie
-        self.refresh()
+        try:
+            self.serie = [float(i) for i in serie]
+        except TypeError:
+            print("Error: no numeric variable in list")
+        else:
+            serie.sort()
+            self.refresh()
 
     def __repr__(self):
         to_return = "; ".join(str(x) for x in self.serie)
