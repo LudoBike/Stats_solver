@@ -2,7 +2,7 @@ class StatSerie(object):
     def __init__(self, serie):
         try:
             self.serie = [float(i) for i in serie]
-        except TypeError:
+        except ValueError:
             print("Error: no numeric variable in list")
         else:
             serie.sort()
@@ -46,7 +46,7 @@ class StatSerie(object):
     def append(self, to_append):
         try:
             self.serie.append(float(to_append))
-        except TypeError:
+        except ValueError:
             print("error : no numeric variable")
         else:
             self.serie.sort()
