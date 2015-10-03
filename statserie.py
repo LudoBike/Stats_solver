@@ -46,10 +46,12 @@ class StatSerie(object):
     def append(self, to_append):
         try:
             self.serie.append(float(to_append))
-            self.serie.sort()
-            self.refresh()
         except TypeError:
             print("error : no numeric variable")
+        else:
+            self.serie.sort()
+            self.refresh()
+            
     def save(self, save_file_path):
         if (type(save_file_path) != str):
             print("Bad argument please enter string")
