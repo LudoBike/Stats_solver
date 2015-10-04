@@ -66,7 +66,11 @@ class StatSerie(object):
 
     def append(self, to_append):
         try:
-            self._serie.append(float(to_append))
+            if (type(to_append) == list) or (type(to_append) == tuple):
+                for i in to_append :
+                    self.append(float(i))
+            else:
+                self._serie.append(float(to_append))
         except ValueError:
             print("error : no numeric variable")
         else:
