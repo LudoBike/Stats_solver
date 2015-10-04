@@ -77,6 +77,13 @@ class StatSerie(object):
             self._serie.sort()
             self.refresh()
 
+    def merge(self, to_merge):
+        if (type(to_merge) != StatSerie):
+            raise ValueError
+        else:
+            self.append(to_merge._serie)
+            self.refresh()
+
     def save(self, save_file_path):
         if (type(save_file_path) != str):
             print("Bad argument please enter string")
