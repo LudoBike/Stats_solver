@@ -14,6 +14,27 @@ class StatSerie(object):
             .format(self._etendue, self._mediane, self._q1, self._q3, self._moyenne)
         return to_return
 
+    def _get_etendue(self):
+        return self._etendue
+
+    def _get_mediane(self):
+        return self._mediane
+
+    def _get_q1(self):
+        return self._q1
+
+    def _get_q3(self):
+        return self._q3
+
+    def _get_moyenne(self):
+        return self._moyenne
+
+    etendue = property(_get_etendue)
+    mediane = property(_get_mediane)
+    q1 = property(_get_q1)
+    q3 = property(_get_q3)
+    moyenne = property(_get_moyenne)
+
     def cal_etendue(self):
         self._etendue = max(self._serie) - min(self._serie)
 
