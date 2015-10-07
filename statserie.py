@@ -9,9 +9,13 @@ class StatSerie(object):
             self.refresh()
 
     def __repr__(self):
-        to_return = "; ".join(str(x) for x in self._serie)
+        to_return = str()
+        for index, x in enumerate(self._serie):
+            to_return += "{0}; ".format(x)
+            if not((index + 1)%15):
+                to_return += "\n"
         to_return += "\nétendue = {0}; mediane = {1}; q1 = {2}; q2 = {3}; moyenne = {4}"\
-            .format(self._etendue, self._mediane, self._q1, self._q3, self._moyenne)
+                .format(self._etendue, self._mediane, self._q1, self._q3, self._moyenne)
         return to_return
 
     def _get_etendue(self):
