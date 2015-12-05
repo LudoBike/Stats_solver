@@ -2,7 +2,7 @@
 
 def keyboard_input():
     """Entrée interactive des valeurs"""
-    print("Entrez les valeurs de la serie statatistique,")
+    print("Entrez les valeurs de la serie statistique,")
     print("r/remove pour suprimer la dernière valeur")
     print("ou q/quit pour quitter")
     serie = []
